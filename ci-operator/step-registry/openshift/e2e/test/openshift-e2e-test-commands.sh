@@ -132,6 +132,11 @@ openstack*)
     export TEST_PROVIDER='{"type":"openstack"}';;
 ovirt) export TEST_PROVIDER='{"type":"ovirt"}';;
 kubevirt) export TEST_PROVIDER='{"type":"kubevirt"}';;
+ibmcloud)
+    export TEST_PROVIDER='{"type":"ibmcloud"}'
+    IC_API_KEY="$(< "${CLUSTER_PROFILE_DIR}/openshift_ipi_ci_apikey")"
+    export IC_API_KEY
+    ;;
 *) echo >&2 "Unsupported cluster type '${CLUSTER_TYPE}'"; exit 1;;
 esac
 
