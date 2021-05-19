@@ -11,6 +11,8 @@ export AZURE_AUTH_LOCATION=$CLUSTER_PROFILE_DIR/osServicePrincipal.json
 export GOOGLE_CLOUD_KEYFILE_JSON=$CLUSTER_PROFILE_DIR/gce.json
 export OS_CLIENT_CONFIG_FILE=${SHARED_DIR}/clouds.yaml
 export OVIRT_CONFIG=${SHARED_DIR}/ovirt-config.yaml
+IC_API_KEY="$(< "${CLUSTER_PROFILE_DIR}/ibmcloud-api-key")"
+export IC_API_KEY
 
 echo "Deprovisioning cluster ..."
 if [[ ! -s "${SHARED_DIR}/metadata.json" ]]; then
