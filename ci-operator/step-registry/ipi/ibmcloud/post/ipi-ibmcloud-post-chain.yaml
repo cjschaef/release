@@ -1,6 +1,7 @@
 chain:
   as: ipi-ibmcloud-post
   steps:
+  - ref: gather-ibmcloud-resource
   - chain: ipi-deprovision
   documentation: |-
     The IPI cleanup step contains all steps that deprovision an OpenShift
